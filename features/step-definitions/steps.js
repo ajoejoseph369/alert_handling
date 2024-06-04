@@ -1,6 +1,7 @@
 const { Given, When, Then } = require('@wdio/cucumber-framework');
 
 const HomePage = require('../pageobjects/page.js');
+const NewPage = require('../pageobjects/newpage.js');
 
 Given(/^user is on the homepage$/, async () => {
 	await HomePage.goToPage();
@@ -53,4 +54,19 @@ Then(/^user clicks ok on JSPrompt$/, async () => {
 Then(/^user clicks cancel on prompt$/, async () => {
 	await HomePage.dismissPrompt();
 	await HomePage.checkJSPromptWithoutText();
+});
+
+
+
+Given(/^user is on the page$/, async () => {
+	await NewPage.goToURL();
+});
+
+When(/^user clicks on a button$/, async () => {
+	await NewPage.clickButton1();
+	await NewPage.interactWithAlert();
+});
+
+Then(/^status is printed in console$/, () => {
+	return true;
 });

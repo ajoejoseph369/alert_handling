@@ -31,3 +31,9 @@ Feature: Test the functionality of alert handling
     Then user is displayed with an alert
     Then user clicks cancel on prompt
 
+  Scenario:Pass test even when alert isn't displayed
+    Given user is on the page
+    When user clicks on a button
+    Then status is printed in console
+
+  
