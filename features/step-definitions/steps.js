@@ -11,7 +11,7 @@ When(/^user clicks on Click for JS Alert button$/, async () => {
 });
 
 Then(/^user is displayed with an alert$/, async () => {
-	return true;
+	await HomePage.checkIfAlertIsDisplayed();
 });
 
 Then(/^user clicks ok on JSAlert$/, async () => {

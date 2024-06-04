@@ -87,7 +87,12 @@ class HomePage{
             return false;
     }
 
-
+    async checkIfAlertIsDisplayed(){
+        if(await browser.isAlertOpen())
+            return true;
+        else
+            return false;
+    }
 
 }
 
